@@ -21,7 +21,7 @@ export default function Navbar() {
       <div className="flex items-center justify-between mx-auto max-w-2xl py-3 px-4 sm:px-6 lg:max-w-7xl">
         <Link href="/">
           <h1 className="text-2xl md:text-3xl font-bold">
-            Next<span className="text-primary">Commerce</span>
+            Taha<span className="text-primary">Commerce</span>
           </h1>
         </Link>
 
