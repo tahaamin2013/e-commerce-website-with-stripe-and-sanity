@@ -49,8 +49,6 @@ export default async function Hero() {
           </div>
         </div>
       </div>
-
-      
     </section>
   );
 }
