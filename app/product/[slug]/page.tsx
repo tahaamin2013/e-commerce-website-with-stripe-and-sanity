@@ -1,10 +1,12 @@
 // import AddToBag from "@/app/components/AddToBag";
 // import CheckoutNow from "@/app/components/CheckoutNow";
+import { useShoppingCart } from "use-shopping-cart";
 import ImageGallery from "@/components/ImageGallery";
 import { fullProduct } from "@/app/interface";
 import { client } from "@/app/lib/sanity";
 import { Button } from "@/components/ui/button";
 import { Star, Truck } from "lucide-react";
+import AddToBag from "@/components/AddToBag";
 
 async function getData(slug: string) {
   const query = `*[_type == "product" && slug.current == "${slug}"][0] {
@@ -31,7 +33,6 @@ export default async function ProductPge({
   params: { slug: string };
 }) {
   const data: fullProduct = await getData(params.slug);
-
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-screen-xl px-4 md:px-8">
@@ -80,7 +81,7 @@ export default async function ProductPge({
             </div>
 
             <div className="flex gap-2.5 mb-3">
-              {/* <AddToBag
+               <AddToBag
                 currency="USD"
                 description={data.description}
                 image={data.images[0]}
@@ -89,18 +90,15 @@ export default async function ProductPge({
                 key={data._id}
                 price_id={data.price_id}
               />
-              <CheckoutNow
-                currency="USD"
-                description={data.description}
-                image={data.images[0]}
-                name={data.name}
-                price={data.price}
-                key={data._id}
-                price_id={data.price_id}
-              /> */}
-              <Button>
-                Add To Bag
-              </Button>
+            {/* <CheckoutNow
+              currency="USD"
+              description={data.description}
+              image={data.images[0]}
+              name={data.name}
+              price={data.price}
+              key={data._id}
+              price_id={data.price_id}
+            /> */}
               <Button variant={"secondary"}>
                 Checkout now
               </Button>
