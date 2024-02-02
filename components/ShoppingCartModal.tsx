@@ -97,13 +97,11 @@ export default function ShoppingCartModal() {
             <p className="mt-0.5 text-sm text-gray-500">
               Shipping and taxes are calculated at checkout.
             </p>
-
             <div className="mt-6">
               <Button onClick={handleCheckoutClick} className="w-full">
                 Checkout
               </Button>
             </div>
-
             <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
               <p>
                 OR{" "}
