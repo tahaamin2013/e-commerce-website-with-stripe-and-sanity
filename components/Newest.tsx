@@ -61,32 +61,31 @@ export default async function Newest() {
 
         <div className="mt-5 grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-3 gap-7">
           {data.map((product) => (
-            <div key={product._id} className="group relative">
+            <div key={product._id} className="group relative mb-2">
                <Link href={`/product/${product.slug}`}>
+               <span className="absolute top-5 right-6 z-20 inline-flex items-center justify-center rounded-full bg-primary py-2 px-4 text-sm font-semibold capitalize text-white">
+               $ {product.price}
+          </span>
                 <Image
                   src={product.imageUrl}
                   alt="Product image"
-                  className="w-full h-[300px] object-cover object-center transition-all duration-300 hover:scale-95 lg:h-[300px] lg:w-full rounded-b-none rounded-md"
+                  className="w-full h-[300px] object-cover object-center transition-all duration-300 lg:h-[300px] lg:w-full rounded-b-none rounded-md"
                   width={300}
                   height={300}
                 />
-                <div></div>
                 </Link>
               <div className="mt-1">
                 <div>
-                <p className="mt-2 text-sm bg-primary px-2 text-white w-fit rounded-xl rounded-l-none">
+                <p className="mt-2 text-sm bg-primary px-2 py-0.5 font-bold text-white w-fit rounded-xl rounded-l-none">
                     {product.categoryName}
                   </p>
-                  <h3 className="text-md font-medium text-black">
+                  <h3 className="text-xl mt-1 font-bold text-black">
                   <Link href={`/product/${product.slug}`}>
                       {product.name}
                     </Link>
                   </h3>
                  
                 </div>
-                <p className="text-sm font-medium text-black mt-1">
-                  $ {product.price}
-                </p>
               </div>
             </div>
           ))}
