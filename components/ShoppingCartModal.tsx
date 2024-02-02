@@ -98,7 +98,7 @@ export default function ShoppingCartModal() {
               Shipping and taxes are calculated at checkout.
             </p>
             <div className="mt-6">
-              <Button onClick={handleCheckoutClick} className="w-full">
+              <Button className="w-full">
                 Checkout
               </Button>
             </div>

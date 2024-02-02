@@ -7,7 +7,6 @@ import { client } from "@/app/lib/sanity";
 import { Button } from "@/components/ui/button";
 import { Star, Truck } from "lucide-react";
 import AddToBag from "@/components/AddToBag";
-import CheckoutNow from "@/components/CheckoutNow";
 
 async function getData(slug: string) {
   const query = `*[_type == "product" && slug.current == "${slug}"][0] {
@@ -91,7 +90,7 @@ export default async function ProductPge({
                 key={data._id}
                 price_id={data.price_id}
               />
-            <CheckoutNow
+            {/* <CheckoutNow
               currency="USD"
               description={data.description}
               image={data.images[0]}
@@ -99,7 +98,10 @@ export default async function ProductPge({
               price={data.price}
               key={data._id}
               price_id={data.price_id}
-            />
+            /> */}
+              <Button variant={"secondary"}>
+                Checkout now
+              </Button>
             </div>
 
             <p className="mt-1 text-base text-gray-500 tracking-wide">
