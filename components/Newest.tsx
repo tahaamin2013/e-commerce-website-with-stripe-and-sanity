@@ -62,6 +62,7 @@ export default async function Newest() {
         <div className="mt-5 grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-3 gap-7">
           {data.map((product) => (
             <div key={product._id} className="group relative">
+               <Link href={`/product/${product.slug}`}>
                 <Image
                   src={product.imageUrl}
                   alt="Product image"
@@ -69,14 +70,15 @@ export default async function Newest() {
                   width={300}
                   height={300}
                 />
-
+                <div></div>
+                </Link>
               <div className="mt-1">
                 <div>
                 <p className="mt-2 text-sm bg-primary px-2 text-white w-fit rounded-xl rounded-l-none">
                     {product.categoryName}
                   </p>
                   <h3 className="text-md font-medium text-black">
-                    <Link href={`/product/${product.slug}`}>
+                  <Link href={`/product/${product.slug}`}>
                       {product.name}
                     </Link>
                   </h3>
